@@ -1,0 +1,17 @@
+﻿@model MvcApplication1.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Bitmap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bitmap</h2>
+@using (Html.BeginForm("Bitmap", "Home"))
+{
+    <div>
+        <img src="data:image/bmp;base64,@Convert.ToBase64String(Model.Bild)" />
+    </div>
+    <div>
+        <a href="~/Images/image.pdf" style="color: black;" target="_blank">Pdf</a>
+    </div>
+}

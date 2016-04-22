@@ -1,0 +1,36 @@
+﻿@model MvcApplication1.Models.NotenViewModel
+
+@{
+    ViewBag.Title = "Noten";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+        @using (Html.BeginForm("Noten", "Home", FormMethod.Post))
+        {
+<ol class="round">
+    <li class="one">
+        <h5>Fach</h5>
+    @Html.TextBoxFor(x => x.Fach)
+    </li>
+
+    <li class="two">
+        <h5>Note</h5>
+        @Html.TextBoxFor(x => x.Note)
+    </li>
+        <li class="six">
+        <h5>Error</h5>
+        @Html.ValidationSummary()
+    </li>
+</ol>
+<input type="submit" name="senden" value="Add" />   
+<input type="submit" name="senden" value="Weiter" />
+        }

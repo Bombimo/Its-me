@@ -1,0 +1,16 @@
+﻿@model MvcApplication1.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Bestätigung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bestätigung</h2>
+@if (ViewBag.SendenErfolgreich != false)
+{
+    @:<div>Das Email wurde an @Model.Email gesendet.</div>
+}
+else
+{
+    <div>Das E-Mail konnte nicht gesendet werden.</div>   
+}

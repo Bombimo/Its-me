@@ -1,0 +1,41 @@
+﻿@model MvcApplication1.Models.IndexViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            @Html.RadioButtonFor(x => x.EmailSendenTrue, true)<label>EmailSenden</label>
+            @Html.RadioButtonFor(x => x.EmailSendenTrue, false)<label>BitmapErstellen</label>
+<ol class="round">
+    <li class="one">
+        <h5>Nachname</h5>
+    @Html.TextBoxFor(x => x.Nachname)
+    </li>
+
+    <li class="two">
+        <h5>Vorname</h5>
+        @Html.TextBoxFor(x => x.Name)
+    </li>
+
+    <li class="three">
+        <h5>Email</h5>
+        @Html.TextBoxFor(x => x.Email)
+    </li>
+        <li class="four">
+        <h5>Error</h5>
+        @Html.ValidationSummary()
+    </li>
+</ol>
+<input type="submit" name="senden" value="senden" />   
+}
